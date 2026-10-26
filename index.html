@@ -14,19 +14,28 @@
         <!-- RadLions Column -->
         <div class="team">
             <div id="RadLionScore">RadLions: 0</div>
-            <button id="RadLion">RadLions</button>
+            <div class="btn-group">
+                <button id="RadLion">+</button>
+                <button id="RadLionMinus" class="minus-btn">-</button>
+            </div>
         </div>
 
         <!-- ElectroLions Column -->
         <div class="team">
             <div id="ElectroLionScore">ElectroLions: 0</div>
-            <button id="ElectroLion">ElectroLions</button>
+            <div class="btn-group">
+                <button id="ElectroLion">+</button>
+                <button id="ElectroLionMinus" class="minus-btn">-</button>
+            </div>
         </div>
 
         <!-- MechaLions Column -->
         <div class="team">
             <div id="MechaLionScore">MechaLions: 0</div>
-            <button id="MechaLion">MechaLions</button>
+            <div class="btn-group">
+                <button id="MechaLion">+</button>
+                <button id="MechaLionMinus" class="minus-btn">-</button>
+            </div>
         </div>
 
     </div>
@@ -34,11 +43,10 @@
     <!-- Global Reset Button -->
     <button id="ResetBtn">Reset All Scores</button>
 
-      <!-- 1. Make sure this line matches this exact UNPKG address format -->
-    <!-- CHANGE THIS LINE: -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- The complete unpkg link to load the Supabase database library tool -->
+    <script src="https://unpkg.com"></script>
     
-    <!-- 2. This loads your custom script -->
+    <!-- This loads your custom script.js logic file -->
     <script src="script.js"></script>
 </body>
-
+</html>
