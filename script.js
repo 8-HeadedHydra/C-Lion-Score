@@ -1,5 +1,5 @@
 // 1. Connect to Supabase using your project's unique internet addresses
-const SUPABASE_URL = "https://supabase.co"; 
+const SUPABASE_URL = "https://kzxxmkltlcswazyfpghc.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6eHhta2x0bGNzd2F6eWZwZ2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NjkwODQsImV4cCI6MjEwODU0NTA4NH0.sMvfzMGHV6Cycq7AdkiIFbZ2NHC0KYyBtzlNQksBhCg"; 
 
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
