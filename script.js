@@ -1,12 +1,8 @@
 // 1. Connect to Supabase using your project's unique internet addresses
-// CHANGE line 2 to look exactly like this:
-const SUPABASE_URL = "https://kzxxmkltlcswazyfpghc.supabase.co"; 
+const SUPABASE_URL = "https://supabase.co"; 
+const SUPABASE_KEY = "sb_publishable_44pCo5c2Gs2c2acyTRSWDA_a9Kty6vT_f7U-027_24"; 
 
-// THIS IS THE VARIABLE LINE THAT WAS ACCIDENTALLY DELETED:
-// Paste your full new token directly here between the quotes:
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6eHhta2x0bGNzd2F6eWZwZ2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NjkwODQsImV4cCI6MjEwODU0NTA4NH0.sMvfzMGHV6Cycq7AdkiIFbZ2NHC0KYyBtzlNQksBhCg";
-//sheesh talk about long keys
-// This creates the database link
+// Connected under 'db' to prevent naming conflicts with the global library
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // 2. Select HTML Elements
@@ -17,6 +13,12 @@ let MechaLionScore = document.getElementById("MechaLionScore");
 let ButtonRad = document.getElementById("RadLion");
 let ButtonElec = document.getElementById("ElectroLion");
 let ButtonMecha = document.getElementById("MechaLion");
+
+// New Minus Buttons
+let ButtonRadMinus = document.getElementById("RadLionMinus");
+let ButtonElecMinus = document.getElementById("ElectroLionMinus");
+let ButtonMechaMinus = document.getElementById("MechaLionMinus");
+
 let ResetBtn = document.getElementById("ResetBtn");
 
 // Define score variables
@@ -66,6 +68,7 @@ function verifyAndExecute(actionCallback) {
 }
 
 // 5. Click Event Actions (Intercept with prompt, then push to cloud)
+// Plus Buttons
 ButtonRad.addEventListener("click", () => {
     verifyAndExecute(() => { RadLions += 1; saveScores(); });
 });
@@ -78,6 +81,20 @@ ButtonMecha.addEventListener("click", () => {
     verifyAndExecute(() => { MechaLions += 1; saveScores(); });
 });
 
+// Minus Buttons (NEW)
+ButtonRadMinus.addEventListener("click", () => {
+    verifyAndExecute(() => { RadLions -= 1; saveScores(); });
+});
+
+ButtonElecMinus.addEventListener("click", () => {
+    verifyAndExecute(() => { ElectroLions -= 1; saveScores(); });
+});
+
+ButtonMechaMinus.addEventListener("click", () => {
+    verifyAndExecute(() => { MechaLions -= 1; saveScores(); });
+});
+
+// Reset Button
 ResetBtn.addEventListener("click", () => {
     verifyAndExecute(() => { RadLions = 0; ElectroLions = 0; MechaLions = 0; saveScores(); });
 });
