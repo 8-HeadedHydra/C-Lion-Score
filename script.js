@@ -1,10 +1,11 @@
 // 1. Connect to Supabase using your project's unique internet addresses
-const SUPABASE_URL = "https://kzxxmkltlcswazyfpghc.supabase.co";
+const SUPABASE_URL = "https://kzxxmkltlcswazyfpghc.supabase.co"; 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6eHhta2x0bGNzd2F6eWZwZ2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NjkwODQsImV4cCI6MjEwODU0NTA4NH0.sMvfzMGHV6Cycq7AdkiIFbZ2NHC0KYyBtzlNQksBhCg"; 
 
+// Connected under 'db' to prevent naming conflicts with the global library
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// 2. Select HTML Elements
+// 2. Select HTML Elements... (leave all your buttons and functions below this exactly as they are!)
 let RadlionScore = document.getElementById("RadLionScore");
 let ElectroLionScore = document.getElementById("ElectroLionScore");
 let MechaLionScore = document.getElementById("MechaLionScore");
