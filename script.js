@@ -1,8 +1,7 @@
 // 1. Connect to Supabase using your project's unique internet addresses
 const SUPABASE_URL = "https://supabase.co"; 
-const SUPABASE_KEY = "sb_publishable_44pCo5c2Gs2c2acyTRSWDA_a9Kty6vT_f7U-027_24"; 
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6eHhta2x0bGNzd2F6eWZwZ2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5NjkwODQsImV4cCI6MjEwODU0NTA4NH0.sMvfzMGHV6Cycq7AdkiIFbZ2NHC0KYyBtzlNQksBhCg"; 
 
-// Connected under 'db' to prevent naming conflicts with the global library
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // 2. Select HTML Elements
@@ -14,19 +13,13 @@ let ButtonRad = document.getElementById("RadLion");
 let ButtonElec = document.getElementById("ElectroLion");
 let ButtonMecha = document.getElementById("MechaLion");
 
-// New Minus Buttons
 let ButtonRadMinus = document.getElementById("RadLionMinus");
 let ButtonElecMinus = document.getElementById("ElectroLionMinus");
 let ButtonMechaMinus = document.getElementById("MechaLionMinus");
 
 let ResetBtn = document.getElementById("ResetBtn");
 
-// Define score variables
-let RadLions = 0;
-let ElectroLions = 0;
-let MechaLions = 0;
-
-// Set your admin modifier password here
+let RadLions = 0, ElectroLions = 0, MechaLions = 0;
 const ADMIN_PASSWORD = "ocpslions2026"; 
 
 // 3. Download fresh scores from the network database
@@ -40,14 +33,13 @@ async function fetchScores() {
     }
 }
 
-// Render values out to the browser UI layout
 function updateDisplay() {
     RadlionScore.innerText = "RadLions: " + RadLions;
     ElectroLionScore.innerText = "ElectroLions: " + ElectroLions;
     MechaLionScore.innerText = "MechaLions: " + MechaLions;
 }
 
-// 4. Send updated math values back to your cloud data sheet
+// 4. Send updated values back to the cloud
 async function saveScores() {
     await db.from('scoreboard').update({ 
         rad_lions: RadLions, 
@@ -57,7 +49,7 @@ async function saveScores() {
     updateDisplay();
 }
 
-// Security Check Prompt Interceptor
+// Security Check Prompt
 function verifyAndExecute(actionCallback) {
     let passwordCheck = prompt("Enter the password to alter scores:");
     if (passwordCheck === ADMIN_PASSWORD) {
@@ -67,40 +59,17 @@ function verifyAndExecute(actionCallback) {
     }
 }
 
-// 5. Click Event Actions (Intercept with prompt, then push to cloud)
-// Plus Buttons
-ButtonRad.addEventListener("click", () => {
-    verifyAndExecute(() => { RadLions += 1; saveScores(); });
-});
+// 5. Click Event Actions
+ButtonRad.addEventListener("click", () => { verifyAndExecute(() => { RadLions += 1; saveScores(); }); });
+ButtonElec.addEventListener("click", () => { verifyAndExecute(() => { ElectroLions += 1; saveScores(); }); });
+ButtonMecha.addEventListener("click", () => { verifyAndExecute(() => { MechaLions += 1; saveScores(); }); });
 
-ButtonElec.addEventListener("click", () => {
-    verifyAndExecute(() => { ElectroLions += 1; saveScores(); });
-});
+ButtonRadMinus.addEventListener("click", () => { verifyAndExecute(() => { RadLions -= 1; saveScores(); }); });
+ButtonElecMinus.addEventListener("click", () => { verifyAndExecute(() => { ElectroLions -= 1; saveScores(); }); });
+ButtonMechaMinus.addEventListener("click", () => { verifyAndExecute(() => { MechaLions -= 1; saveScores(); }); });
 
-ButtonMecha.addEventListener("click", () => {
-    verifyAndExecute(() => { MechaLions += 1; saveScores(); });
-});
+ResetBtn.addEventListener("click", () => { verifyAndExecute(() => { RadLions = 0; ElectroLions = 0; MechaLions = 0; saveScores(); }); });
 
-// Minus Buttons (NEW)
-ButtonRadMinus.addEventListener("click", () => {
-    verifyAndExecute(() => { RadLions -= 1; saveScores(); });
-});
-
-ButtonElecMinus.addEventListener("click", () => {
-    verifyAndExecute(() => { ElectroLions -= 1; saveScores(); });
-});
-
-ButtonMechaMinus.addEventListener("click", () => {
-    verifyAndExecute(() => { MechaLions -= 1; saveScores(); });
-});
-
-// Reset Button
-ResetBtn.addEventListener("click", () => {
-    verifyAndExecute(() => { RadLions = 0; ElectroLions = 0; MechaLions = 0; saveScores(); });
-});
-
-// Run immediately when page loads to fetch active numbers
+// Run network operations
 fetchScores();
-
-// Automatically sweep and update the local display every 3 seconds
 setInterval(fetchScores, 3000);
