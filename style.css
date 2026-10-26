@@ -57,12 +57,18 @@ body {
     text-shadow: 0 0 10px rgba(165, 94, 234, 0.3);
 }
 
-/* 4. Interactive Button Styling */
+/* 4. Button Arrangement Group */
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* 5. Interactive Button Styling */
 button {
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.8rem 1.8rem;
+    padding: 0.8rem 1rem;
     border: none;
     border-radius: 8px;
     color: #ffffff;
@@ -70,56 +76,29 @@ button {
     width: 100%;
 }
 
-/* RadLions Button */
-#RadLion {
+/* RadLions Buttons */
+#RadLion, #RadLionMinus {
     background-color: #2ed573;
     box-shadow: 0 4px 0px #26af5f;
 }
+#RadLion:hover, #RadLionMinus:hover { background-color: #55efc4; transform: translateY(-2px); box-shadow: 0 6px 0px #26af5f; }
+#RadLion:active, #RadLionMinus:active { transform: translateY(2px); box-shadow: 0 0px 0px #26af5f; }
 
-#RadLion:hover {
-    background-color: #55efc4;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px #26af5f;
-}
-
-#RadLion:active {
-    transform: translateY(2px);
-    box-shadow: 0 0px 0px #26af5f;
-}
-
-/* ElectroLions Button */
-#ElectroLion {
+/* ElectroLions Buttons */
+#ElectroLion, #ElectroLionMinus {
     background-color: #00d2d3;
     box-shadow: 0 4px 0px #01a3a4;
 }
+#ElectroLion:hover, #ElectroLionMinus:hover { background-color: #1dd1a1; transform: translateY(-2px); box-shadow: 0 6px 0px #01a3a4; }
+#ElectroLion:active, #ElectroLionMinus:active { transform: translateY(2px); box-shadow: 0 0px 0px #01a3a4; }
 
-#ElectroLion:hover {
-    background-color: #1dd1a1;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px #01a3a4;
-}
-
-#ElectroLion:active {
-    transform: translateY(2px);
-    box-shadow: 0 0px 0px #01a3a4;
-}
-
-/* MechaLions Button */
-#MechaLion {
+/* MechaLions Buttons */
+#MechaLion, #MechaLionMinus {
     background-color: #a55eea;
     box-shadow: 0 4px 0px #8244bf;
 }
-
-#MechaLion:hover {
-    background-color: #b378f2;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px #8244bf;
-}
-
-#MechaLion:active {
-    transform: translateY(2px);
-    box-shadow: 0 0px 0px #8244bf;
-}
+#MechaLion:hover, #MechaLionMinus:hover { background-color: #b378f2; transform: translateY(-2px); box-shadow: 0 6px 0px #8244bf; }
+#MechaLion:active, #MechaLionMinus:active { transform: translateY(2px); box-shadow: 0 0px 0px #8244bf; }
 
 /* Global Reset Button */
 #ResetBtn {
@@ -127,14 +106,5 @@ button {
     box-shadow: 0 4px 0px #cf2121;
     max-width: 250px;
 }
-
-#ResetBtn:hover {
-    background-color: #ff4d4d;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px #cf2121;
-}
-
-#ResetBtn:active {
-    transform: translateY(2px);
-    box-shadow: 0 0px 0px #cf2121;
-}
+#ResetBtn:hover { background-color: #ff4d4d; transform: translateY(-2px); box-shadow: 0 6px 0px #cf2121; }
+#ResetBtn:active { transform: translateY(2px); box-shadow: 0 0px 0px #cf2121; }
