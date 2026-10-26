@@ -1,0 +1,140 @@
+/* 1. Global Reset & Theme Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* 2. Scoreboard Container Layout */
+.score-container {
+    display: flex;
+    gap: 3rem;
+    background: #1a1a1e;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2a30;
+}
+
+/* 3. Team Styling (Scores & Text) */
+.team {
+    text-align: center;
+    min-width: 160px;
+}
+
+#RadLionScore, #ElectroLionScore, #MechaLionScore {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Specific Team Colors */
+#RadLionScore {
+    color: #2ed573; /* Neon Green */
+    text-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+#ElectroLionScore {
+    color: #00d2d3; /* Neon Cyan */
+    text-shadow: 0 0 10px rgba(0, 210, 211, 0.3);
+}
+
+#MechaLionScore {
+    color: #a55eea; /* Neon Purple */
+    text-shadow: 0 0 10px rgba(165, 94, 234, 0.3);
+}
+
+/* 4. Interactive Button Styling */
+button {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+/* RadLions Button */
+#RadLion {
+    background-color: #2ed573;
+    box-shadow: 0 4px 0px #26af5f;
+}
+
+#RadLion:hover {
+    background-color: #55efc4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #26af5f;
+}
+
+#RadLion:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0px #26af5f;
+}
+
+/* ElectroLions Button */
+#ElectroLion {
+    background-color: #00d2d3;
+    box-shadow: 0 4px 0px #01a3a4;
+}
+
+#ElectroLion:hover {
+    background-color: #1dd1a1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #01a3a4;
+}
+
+#ElectroLion:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0px #01a3a4;
+}
+
+/* MechaLions Button */
+#MechaLion {
+    background-color: #a55eea;
+    box-shadow: 0 4px 0px #8244bf;
+}
+
+#MechaLion:hover {
+    background-color: #b378f2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #8244bf;
+}
+
+#MechaLion:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0px #8244bf;
+}
+
+/* Global Reset Button */
+#ResetBtn {
+    background-color: #ff3838; /* Bright Red */
+    box-shadow: 0 4px 0px #cf2121;
+    max-width: 250px;
+}
+
+#ResetBtn:hover {
+    background-color: #ff4d4d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #cf2121;
+}
+
+#ResetBtn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0px #cf2121;
+}

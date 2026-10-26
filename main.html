@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C+Lions Score Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scoreboard Container Layout -->
+    <div class="score-container">
+        
+        <!-- RadLions Column -->
+        <div class="team">
+            <div id="RadLionScore">RadLions: 0</div>
+            <button id="RadLion">RadLions</button>
+        </div>
+
+        <!-- ElectroLions Column -->
+        <div class="team">
+            <div id="ElectroLionScore">ElectroLions: 0</div>
+            <button id="ElectroLion">ElectroLions</button>
+        </div>
+
+        <!-- MechaLions Column -->
+        <div class="team">
+            <div id="MechaLionScore">MechaLions: 0</div>
+            <button id="MechaLion">MechaLions</button>
+        </div>
+
+    </div>
+
+    <!-- Global Reset Button -->
+    <button id="ResetBtn">Reset All Scores</button>
+
+      <!-- 1. Make sure this line matches this exact UNPKG address format -->
+    <!-- CHANGE THIS LINE: -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. This loads your custom script -->
+    <script src="script.js"></script>
+</body>
+
